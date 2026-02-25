@@ -19,4 +19,5 @@ COPY . /app
 
 EXPOSE ${PORT}
 
-CMD ["streamlit", "run", "app.py", "--server.port", "${PORT}", "--server.headless", "true"]
+# usar forma shell para permitir expansão de variáveis de ambiente em runtime
+CMD streamlit run app.py --server.port $PORT --server.headless true
