@@ -15,11 +15,17 @@ Como executar:
 Observações:
 
 
-Deploy no Render.com:
+Docker (build e run):
 
-- Este repositório inclui `render.yaml` para deploy automático no Render. Ele instrui o serviço a usar o ambiente Python, instalar dependências e executar o Streamlit.
-- Se o Render estiver tentando usar Ruby (erro `Could not locate Gemfile`), provavelmente o serviço foi detectado como Ruby — no painel do Render escolha "Create Web Service" e selecione "Python" ou permita que o `render.yaml` seja detectado.
-- Comandos chave (usados pelo `render.yaml`):
+```bash
+# build
+docker build -t crm-credito-360 .
+
+# run (mapear porta local 8501)
+docker run -p 8501:8501 crm-credito-360
+```
+
+
 
 ```bash
 pip install -r requirements.txt
