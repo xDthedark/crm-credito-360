@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: crm-credito-360
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.headless true
